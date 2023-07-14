@@ -1,0 +1,3 @@
+CREATE TABLE `sales-management`.`users` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(50) NOT NULL , `last_name` VARCHAR(50) NOT NULL , `email` VARCHAR(50) NOT NULL , `phone` VARCHAR(50) NOT NULL , `comments` TEXT NOT NULL , `status` VARCHAR(10) NOT NULL DEFAULT 'active' , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `phone`, `comments`, `status`) VALUES (NULL, 'ram', 'shrestha', 'ramshrestha@gmail.com', '9823459044', 'This is comment. ', 'active');
