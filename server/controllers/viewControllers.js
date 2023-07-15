@@ -1,4 +1,3 @@
-const mysql = require("mysql");
 const getConnection = require("./databaseConnection");
 const view = async (req, res) => {
   await getConnection.query(
