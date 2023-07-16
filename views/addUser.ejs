@@ -4,6 +4,19 @@
     <li class="breadcrumb-item active" aria-current="page">add new users</li>
   </ol>
 </nav>
+
+<% if (typeof msg !== 'undefined' && msg) { %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= msg %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %>
+
 <form class="row g-3 needs-validation" method="post" action="/newUser">
   <div class="col-6">
     <div class="form-floating mb-3">
@@ -35,7 +48,9 @@
         type="email"
         class="form-control"
         id="floatingInput"
-        placeholder="name@example.com"
+        placeholder="name@gmail.com"
+        name="email"
+        required
       />
       <label for="floatingInput">Email address</label>
     </div>
@@ -54,14 +69,14 @@
   </div>
   <div class="col-12">
     <div class="form-floating mb-3">
-      <input
+      <textarea
         type="text"
         class="form-control"
         id="floatingInput"
         placeholder="comments"
         name="comment"
         style="height: 200px"
-      />
+      ></textarea>
       <label for="floatingInput">Comments</label>
     </div>
   </div>
