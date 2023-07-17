@@ -1,0 +1,79 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">edit user</li>
+  </ol>
+</nav>
+
+<form class="row g-3 needs-validation" method="post" action="/newUser">
+  <% rows.forEach(function(row) { %>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Anil"
+        name="first_name"
+        value="<%= row.first_name %>"
+      />
+      <label for="floatingInput">First Name</label>
+    </div>
+  </div>
+  <div class="col=6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="pahari"
+        name="last_name"
+        value="<%= row.last_name %>"
+      />
+      <label for="floatingInput">Last Name</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@gmail.com"
+        name="email"
+        value="<%= row.email %>"
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="9849282042"
+        name="phone"
+        value="<%= row.phone %>"
+      />
+      <label for="floatingInput">Phone</label>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="form-floating mb-3">
+      <textarea
+        class="form-control"
+        id="floatingInput"
+        placeholder="comments"
+        name="comments"
+        style="height: 200px"
+      >
+<%= row.comments %></textarea
+      >
+      <label for="floatingInput">Comments</label>
+    </div>
+  </div>
+  <% }); %>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
