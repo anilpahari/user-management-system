@@ -11,7 +11,6 @@ const editUser = async (req, res) => {
         } else {
           res.render("editUser", { rows });
           console.log("The data from the table:\n", rows);
-          console.log(req.params.id);
         }
       }
     );

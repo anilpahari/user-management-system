@@ -4,9 +4,22 @@
     <li class="breadcrumb-item active" aria-current="page">edit user</li>
   </ol>
 </nav>
-
-<form class="row g-3 needs-validation" method="post" action="/newUser">
-  <% rows.forEach(function(row) { %>
+<% if (typeof msg !== 'undefined' && msg) { %>
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <%= msg %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %> <% rows.forEach(function(row) { %>
+<form
+  class="row g-3 needs-validation"
+  method="post"
+  action="/editUser/<%=row.id%>"
+>
   <div class="col-6">
     <div class="form-floating mb-3">
       <input
@@ -16,19 +29,21 @@
         placeholder="Anil"
         name="first_name"
         value="<%= row.first_name %>"
+        required
       />
       <label for="floatingInput">First Name</label>
     </div>
   </div>
-  <div class="col=6">
+  <div class="col-6">
     <div class="form-floating mb-3">
       <input
         type="text"
         class="form-control"
         id="floatingInput"
         placeholder="pahari"
-        name="last_name"
         value="<%= row.last_name %>"
+        name="last_name"
+        required
       />
       <label for="floatingInput">Last Name</label>
     </div>
@@ -42,6 +57,7 @@
         placeholder="name@gmail.com"
         name="email"
         value="<%= row.email %>"
+        required
       />
       <label for="floatingInput">Email address</label>
     </div>
@@ -55,6 +71,7 @@
         placeholder="9849282042"
         name="phone"
         value="<%= row.phone %>"
+        required
       />
       <label for="floatingInput">Phone</label>
     </div>
@@ -62,6 +79,7 @@
   <div class="col-12">
     <div class="form-floating mb-3">
       <textarea
+        type="text"
         class="form-control"
         id="floatingInput"
         placeholder="comments"
@@ -73,7 +91,6 @@
       <label for="floatingInput">Comments</label>
     </div>
   </div>
-  <% }); %>
-
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+<% }); %>

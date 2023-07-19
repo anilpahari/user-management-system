@@ -1,11 +1,11 @@
 require("./newUser");
 const getConnection = require("./databaseConnection");
 const submitUser = async (req, res) => {
-  const { first_name, last_name, email, phone, comment } = req.body;
+  const { first_name, last_name, email, phone, comments } = req.body;
 
   await getConnection.query(
     "INSERT INTO users  (first_name,last_name,email,phone,comments)Values(?,?,?,?,?)",
-    [first_name, last_name, email, phone, comment],
+    [first_name, last_name, email, phone, comments],
     (err, result) => {
       if (err) {
         console.error("Error inserting data:", err);

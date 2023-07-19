@@ -7,7 +7,7 @@ const view = async (req, res) => {
       if (!err) {
         res.render("home", { rows });
       }
-      console.log("The data from the table:\n", rows);
+      //console.log("The data from the table:\n", rows);
     }
   );
 };
